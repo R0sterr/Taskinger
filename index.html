@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a85e768a5a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Taskinger - Log in or Sign Up </title>
+</head>
+<body>
+    
+    <main>
+        <div class="wrapper">
+            <div class="form-container">
+                <div class="form-left">
+                    <div class="login-box">
+                        <h2>Log In
+                            <div class="shadow-circle"></div>
+                        </h2>
+                        <p>Welcome to Taskinger. Please enter your details</p>
+                        <div class="form-box">
+                            <label for="login-username">Username:</label>
+                            <input type="text" id="login-username" placeholder="Enter your username">
+                            <p class="error-msg">error</p>
+                        </div>
+                        <div class="form-box">
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password" placeholder="Enter your password">
+                            <p class="error-msg">error</p>
+                        </div>
+                        <button class="form-btn btn" data-btn="login">Log In</button>
+                        <p>Don't have an account? <span class="highlighted--hover" data-link="register">Sign up</span></p>
+                    </div>
+                    <div class="register-box">
+                        <h2>Sign Up</h2>
+                        <p>Welcome to Taskinger. Please Log in or Sign Up to Start</p>
+                        <div class="form-box">
+                            <label for="register-username">Username:</label>
+                            <input type="text" id="register-username" placeholder="Enter your username">
+                            <p class="error-msg">error</p>
+                        </div>
+                        <div class="form-box">
+                            <label for="register-password">Password:</label>
+                            <input type="password" id="register-password" placeholder="Enter your password">
+                            <p class="error-msg">error</p>
+                        </div>
+                        <div class="form-box">
+                            <label for="confirm-password">Confirm Password:</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm your password">
+                            <p class="error-msg">error</p>
+                        </div>
+                        <button class="form-btn btn" data-btn="register">Sign Up</button>
+                        <p>Already have an account? <span class="highlighted--hover" data-link="login">Log In</span></p>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <img src="./img/login-hero.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="popup">
+            <h2>Account has been successfully created!</h2>
+            <p>To go to the main page, click the button below</p>
+            <button class="btn"><a href="main.html">Main Page</a></button>
+        </div>
+    </main>
+
+    <script src="js/login.js" defer></script>
+</body>
+</html>

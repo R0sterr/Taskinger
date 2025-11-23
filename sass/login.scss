@@ -1,0 +1,233 @@
+@use './colors' as *;
+
+body {
+    display: block;
+}
+
+main {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    width: 100%;
+    height: 95dvh;
+    max-height: 700px;
+    padding: 2em;
+    margin: 1em;
+    background-color: $white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    .form-left {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10rem 0;
+
+        h2 {
+            position: relative;
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: $primary;
+            z-index: 1;
+            
+            .shadow-circle {
+                position: absolute;
+                width: 35px;
+                height: 35px;
+                background: radial-gradient(circle, $primary 50%); /* Fioletowy gradient z przezroczystością */
+                border-radius: 50%; /* Kształt koła */
+                opacity: 0.3;
+                left: 20%;
+                top: 65%; /* Wyśrodkowanie pionowe */
+                transform: translateY(-50%); /* Korekta pozycji */
+                z-index: -1;
+            }
+        }
+
+        h2 + p {
+            font-size: 1.4rem;
+            color: $text-muted;
+            margin-bottom: 3em;
+        }
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+            &.error input {
+                border: 1px solid $red;
+            }
+            
+            &.error input:focus {
+                border: 1px solid $red;
+            }
+
+            label {
+                font-weight: 500;
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+
+            input {
+                padding: 0.5em;
+                font-size: 1.6rem;
+                border: 1px solid $text-muted;
+                margin-bottom: 5px;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid $text-muted;
+                }
+
+                &::placeholder {
+                    color: black;
+                }
+            }
+
+            .error-msg {
+                color: $red;
+                visibility: hidden;
+            }
+
+        }
+
+        .form-btn {
+            width: 100%;
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 2em;
+        }
+
+        .form-btn + p {
+            text-align: center;
+        }
+
+        .login-box.fade {
+            animation: fade .5s;
+        }
+        
+        .login-box.show {
+            animation: show .5s;
+        }
+        
+        .register-box {
+            display: none;
+        }
+        
+        .register-box.fade {
+            animation: fade .5s;
+        }
+
+        .register-box.show {
+            animation: show .5s;
+        }
+    }
+
+    .form-right {
+        width: 50%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.popup {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: -300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 200px;
+    background-color: $primary-dark;
+    color: $white;
+    border-radius: 8px;
+    gap: 1em;
+    padding: 20px;
+    font-size: 1.4rem;
+    z-index: 10;
+    transition: top cubic-bezier(0.39, 0.575, 0.565, 1) .5s;
+    
+    button {
+        background-color: $white;
+        
+        a {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+    }
+}
+
+.show-popup {
+    top: 150px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-container {
+        margin: 3em;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-container {
+        .form-left {
+            width: 50%;
+        }
+
+        .form-right {
+            display: flex;
+        }
+    }
+
+    .popup {
+        width: 60%;
+    }
+}

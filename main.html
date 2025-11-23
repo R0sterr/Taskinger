@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a85e768a5a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Taskinger - test panel </title>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <ul>
+            <li>
+                <span class="logo"><img src="./img/favicon.png" alt="brand logo"> Taskinger</span>
+            </li>
+            <li class="sidebar-item home active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </li>
+            <li class="sidebar-item task">
+                <i class="fa-solid fa-list"></i>
+                <span>New Tasks</span>
+            </li>
+            <li class="sidebar-item progress">
+                <i class="fa-solid fa-spinner"></i>
+                <span>In Progress</span>
+            </li>
+            <li class="sidebar-item done">
+                <i class="fa-solid fa-check"></i>
+                <span>Done</span>
+            </li>
+            <li class="sidebar-item profile">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </li>
+            <li class="sidebar-item settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </li>
+        </ul>
+    </nav>
+    <main class="panel-container">
+        <section class="home-section section">
+            <h2 class="section-title">Welcome to <span class="highlighted">Taskinger</span></h2>
+            <p class="under-title">Your project management app</p>
+            <img src="./img/undraw_relaxation_jsge.svg" alt="">
+        </section>
+        <section class="new-tasks-section section">
+            <h2 class="section-title">Your <span class="highlighted">New Tasks</span></h2>
+            <p class="under-title">Here you can find your newest tasks</p>
+            <div class="input-box">
+                <input type="text" id="new-tasks-search" placeholder="Search for Your Tasks...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="search-error">Can't find the task you are looking for :/</p>
+            </div>
+            <div class="new-task-container">
+                <!-- <div class="new-task">
+                    <div><span class="task-id">#1</span></div>
+                    <div><span><i class="fa-regular fa-pen-to-square"></i> Title: </span><span class="task-title">Frontend Course</span></div>
+                    <div><span><i class="fa-regular fa-message"></i> Description: </span><span class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quidem.</span></div>
+                    <div><span><i class="fa-regular fa-calendar"></i> Estimation: </span><span class="task-estimation">05.08.2025 - 11.09.2025</span></div>
+                    <div><span><i class="fa-regular fa-file"></i> Type: </span><span class="task-type">Course</span></div>
+                    <div><span><i class="fa-solid fa-triangle-exclamation"></i> Priority: </span><span class="task-priority medium">Medium</span></div>
+                    <div><span class="task-type"><i class="fa-solid fa-pen"></i><i class="fa-solid fa-circle-arrow-right"></i><i class="fa-solid fa-trash-can"></i></span></div>
+                </div> -->
+            </div>
+        </section>
+        <section class="in-progress-tasks-section section">
+            <h2 class="section-title">Your <span class="highlighted">In Progress</span> Tasks</h2>
+            <p class="under-title">Here you can find your in progress tasks</p>
+            <div class="input-box">
+                <input type="text" id="in-progress-search" placeholder="Search for Your Tasks...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="search-error">Can't find the task you are looking for :/</p>
+            </div>
+            <div class="new-task-container in-progress-tasks-container">
+                
+            </div>
+        </section>
+        <section class="done-tasks-section section">
+            <h2 class="section-title">Your <span class="highlighted">Finished</span> Tasks</h2>
+            <p class="under-title">Here you can find your finished tasks</p>
+            <div class="input-box">
+                <input type="text" id="done-search" placeholder="Search for Your Tasks...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="search-error">Can't find the task you are looking for :/</p>
+            </div>
+            <div class="new-task-container finished-tasks-container">
+                
+            </div>
+        </section>
+        
+        <div class="add-task-btn"><i class="fa-solid fa-plus"></i></div>
+        <div class="popup-shadow"></div>
+        <div class="add-task-popup">
+            <div class="close-popup">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>New Task</h2>
+            <div class="popup-box">
+                <label for="title">Title:</label>
+                <input type="text" id="title">
+            </div>
+            <div class="popup-box">
+                <label for="description">Description:</label>
+                <input type="text" id="description">
+            </div>
+            <div class="popup-box">
+                <label for="estimation">Estimation:</label>
+                <input type="text" id="estimation">
+            </div>
+            <div class="popup-box">
+                <label for="type">Type:</label>
+                <input type="text" id="type">
+            </div>
+            <div class="popup-box">
+                <label for="priority">Priority:</label>
+                <select id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button class="popup-add btn">Add Task</button>
+            <p class="popup-error">Fill in all the details</p>
+        </div>
+
+        <div class="edit-box">
+            <div class="close-popup close-edit-popup">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>Edit for: <span class="edit-for highlighted">Frontend Course</span></h2>
+            <div class="popup-box">
+                <label for="title">Title:</label>
+                <input type="text" id="edit-title">
+            </div>
+            <div class="popup-box">
+                <label for="description">Description:</label>
+                <input type="text" id="edit-description">
+            </div>
+            <div class="popup-box">
+                <label for="estimation">Estimation:</label>
+                <input type="text" id="edit-estimation">
+            </div>
+            <div class="popup-box">
+                <label for="type">Type:</label>
+                <input type="text" id="edit-type">
+            </div>
+            <div class="popup-box">
+                <label for="priority">Priority:</label>
+                <select id="edit-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button class="popup-add btn">Edit Task</button>
+            <p class="popup-error">Fill in all the details</p>
+        </div>
+        <div class="move-popup">
+            <div class="close-popup close-edit-popup">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>Move your <span class="edit-for highlighted">Tasks...</span></h2>
+            <div class="popup-box">
+                <label for="move-option">Move to:</label>
+                <select id="move-option">
+                    <option value="new-task-container">New tasks</option>
+                    <option value="in-progress-tasks-container">In progress tasks</option>
+                    <option value="finished-tasks-container">Finished tasks</option>
+                </select>
+                <button class="move-to-btn btn">Move</button>
+                <p class="popup-error">This task is already in this section</p>
+            </div>
+        </div>
+        <div class="profile-popup">
+            <div class="profile-wrapper">
+                <div class="close-popup close-profile-popup">
+                    <i class="fa-solid fa-xmark close-profile-popup"></i>
+                </div>
+            <div class="profile-header">
+                <div class="profile-picture">
+                    <img src="img/avatars/default.svg" alt="" class="pfp">
+                </div>
+                <p class="profile-username"></p>
+            </div>
+            <div class="profile-footer">
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="stat tasks-created">113</span>
+                        <span>Task's<br> Created</span>
+                    </div>
+                    <div class="profile-stat">
+                        <i class="fa-solid fa-spinner"></i>
+                        <span class="stat tasks-pending">47</span>
+                        <span>Pending<br> Tasks</span>
+                    </div>
+                    <div class="profile-stat">
+                        <i class="fa-solid fa-check"></i>
+                        <span class="stat finished-tasks">66</span>
+                        <span>Task's<br> Finished</span>
+                    </div>
+                </div>
+                <div class="profile-btns">
+                    <button class="btn edit-profile-btn"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+                    <button class="btn log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                </div>
+                <div class="profile-info">
+                    <h2>Introduction</h2>
+                    <p class="profile-description">Nothing yet</p>
+                    <div class="profile-info-box">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span class="company-info">Nothing yet</span>
+                    </div>
+                    <div class="profile-info-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="email-info">Nothing yet</span>
+                    </div>
+                    <div class="profile-info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="address-info">Nothing yet</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="popup-shadow profile-shadow"></div>
+        </div>
+        <div class="edit-profile-popup">
+                <div class="close-popup close-edit-profile-popup">
+                    <i class="fa-solid fa-xmark close-edit-profile-popup"></i>
+                </div>
+                <div class="edit-profile-box avatar-box">
+                    <p class="headline">Avatar:</p>
+                    <label for="avatarUrl">Enter the URL:</label>
+                    <input type="text" id="avatarUrl" placeholder="Enter the URL link here...">
+                    <br>
+                    <button id="validateBtn" class="btn">Upload</button>
+                    <p class="error-msg">There is nothing to upload!</p>
+                </div>
+                <div class="edit-profile-box background-box">
+                    <p class="headline">Background:</p>
+                    <label for="backgroundUrl">Enter the URL:</label>
+                    <input type="text" id="backgroundUrl" placeholder="Enter the URL link here...">
+                    <p>Recommended minimum width: 1200px</p>
+                    <br>
+                    <button id="validateBtn2" class="btn">Upload</button>
+                    <p class="error-msg">There is nothing to upload!</p>
+                </div>
+                <div class="edit-profile-box">
+                    <label for="introduction" class="headline">Introduction:</label>
+                    <textarea id="introduction" placeholder="Introduce yourself..."></textarea>
+                </div>
+                <div class="edit-profile-box">
+                    <label for="employment" class="headline">Employment:</label>
+                    <input type="text" id="employment" placeholder="Place of employment...">
+                </div>
+                <div class="edit-profile-box">
+                    <label for="e-mail" class="headline">E-mail:</label>
+                    <input type="text" id="email" placeholder="Your E-mail...">
+                </div>
+                <div class="edit-profile-box">
+                    <label for="address" class="headline">Address:</label>
+                    <input type="text" id="address" placeholder="Your Address...">
+                </div>
+                <button class="edit-profile-save-btn btn">Save</button>
+            </div>
+
+        <div class="settings-popup">
+            <div class="close-popup close-settings">
+                <i class="fa-solid fa-xmark close-settings"></i>
+            </div>
+            <h2><i class="fa-solid fa-gear"></i> Settings</h2>
+            <div class="settings-box">
+                <p>Change username</p>
+                <div class="username-box"><i class="fa-solid fa-user-pen"></i></div>
+            </div>
+            <div class="settings-box">
+                <p>Change password</p>
+                <div class="password-box"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <div class="settings-box">
+                <p>Dark mode</p>
+                <label for="themeSwitch" class="theme-box">
+                    <input type="checkbox" id="themeSwitch">
+                    <span class="theme-slider"></span>
+                </label>
+            </div>
+            <div class="settings-box">
+                <p>Delete an account</p>
+                <div class="delete-acc-box"><i class="fa-solid fa-broom"></i></div>
+            </div>
+        </div>
+        <div class="settings-popups username-popup">
+            <div class="close-popup close-settings-popup">
+                <i class="fa-solid fa-xmark close-settings-popup"></i>
+            </div>
+            <label for="newUsername">Select new username:</label>
+            <input type="text" id="newUsername">
+            <label for="confirmPassword">Password:</label>
+            <input type="password" id="confirmPassword">
+            <p class="settings-err">Password does not match or username is empty</p>
+            <button class="btn confirm-btn">Confirm</button>
+        </div>
+        <div class="settings-popups password-popup">
+            <div class="close-popup close-settings-popup">
+                <i class="fa-solid fa-xmark close-settings-popup"></i>
+            </div>
+            <label for="newPassword">New password:</label>
+            <input type="password" id="newPassword">
+            <label for="oldPassword">Old password:</label>
+            <input type="password" id="oldPassword">
+            <p class="settings-err">Password is not min. 8 characters long or does not match</p>
+            <button class="btn confirm-btn">Confirm</button>
+        </div>
+        <div class="settings-popups delete-acc-popup">
+            <div class="close-popup close-settings-popup">
+                <i class="fa-solid fa-xmark close-settings-popup"></i>
+            </div>
+            <label for="deleteAccPassw">To confirm account deletion, enter your password:</label>
+            <input type="password" id="deleteAccPassw">
+            <p class="settings-err">Password does not match</p>
+            <button class="btn confirm-btn">Confirm</button>
+        </div>
+    </main>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
