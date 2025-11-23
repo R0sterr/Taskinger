@@ -22,5 +22,5 @@ Taskinger is a web application of a **Kanban Board** built for task management. 
 
 | Category | Technologies |
 | :--- | :--- |
-| **Logic/Data** | **Vanilla JavaScript** (ES6+), **Local Storage** |
-| **Presentation/Style** | **HTML5**, **Sass (SCSS)**, Full **Responsive Web Design** |
+| **Logic/Data** | **Vanilla JavaScript ES6+**, **Local Storage** |
+| **Presentation/Style** | **HTML5**, **SCSS**, **RWD** |
