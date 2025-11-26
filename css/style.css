@@ -71,6 +71,7 @@ textarea {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  height: 100%;
 }
 
 .task-priority {
@@ -83,19 +84,34 @@ textarea {
   text-transform: uppercase;
 }
 
-.medium {
-  background-color: #F3D5AD;
-  border: 1px solid #E5BB83;
-}
-
 .low {
   background-color: #CCF1E2;
   border: 1px solid #A3D6C4;
 }
 
+.medium {
+  background-color: #F3D5AD;
+  border: 1px solid #E5BB83;
+}
+
 .high {
   background-color: #F8D7CF;
   border: 1px solid #E9B5AA;
+}
+
+body.dark-mode .low {
+  background-color: #3d6652;
+  border: 1px solid #5fa284;
+}
+
+body.dark-mode .medium {
+  background-color: #8c6239;
+  border: 1px solid #b07d43;
+}
+
+body.dark-mode .high {
+  background-color: #7a3b35;
+  border: 1px solid #a85c55;
 }
 
 .sidebar {
@@ -179,6 +195,37 @@ textarea {
   color: #007FFF;
 }
 
+.profile-sm {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.profile-sm .img-container {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-sm .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.profile-sm p {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
 .new-tasks-section, .in-progress-tasks-section, .done-tasks-section {
   display: none;
   max-height: 100dvh;
@@ -229,7 +276,6 @@ textarea {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3em;
 }
 .panel-container .new-tasks-section .input-box input, .panel-container .in-progress-tasks-section .input-box input, .panel-container .done-tasks-section .input-box input {
   width: 100%;
@@ -267,6 +313,8 @@ textarea {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 3em;
+  height: 60%;
 }
 .panel-container .new-tasks-section .new-task-container .new-task, .panel-container .in-progress-tasks-section .new-task-container .new-task, .panel-container .done-tasks-section .new-task-container .new-task {
   display: grid;
@@ -445,6 +493,10 @@ textarea {
 .profile-popup .profile-header .profile-picture .pfp {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .profile-popup .profile-header p {
   position: absolute;
@@ -744,6 +796,12 @@ textarea {
   .panel-container .add-task-btn {
     bottom: 2em;
   }
+  .panel-container .home-section {
+    margin-top: 5em;
+  }
+  .section {
+    margin-top: 4em;
+  }
 }
 @keyframes fade {
   from {
@@ -830,4 +888,11 @@ textarea {
 .dark-mode {
   background-color: #1B1C1D;
   color: white;
+}
+
+@media (min-width: 1600px) {
+  .profile-sm {
+    top: 20px;
+    right: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */

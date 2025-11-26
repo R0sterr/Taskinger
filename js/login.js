@@ -13,6 +13,7 @@ const registerBtn = document.querySelector('[data-btn="register"]')
 const registerLink = document.querySelector('[data-link="register"]')
 const registerInputs = [registerUsername, registerPassword, confirmPassword]
 const popup = document.querySelector('.popup')
+const popupBtn = popup.querySelector('button')
 
 if (!localStorage.getItem('users')) {
     localStorage.setItem('users', JSON.stringify([]));
@@ -192,4 +193,8 @@ registerBtn.addEventListener('click', () => {
     checkLength(registerPassword, 8)
     checkPassword(registerPassword, confirmPassword)
     checkRegisterErrors(registerInputs)
+})
+
+popupBtn.addEventListener('click', () => {
+    window.location.href = 'main.html'
 })

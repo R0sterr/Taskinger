@@ -1,1 +1,5 @@
-** BUG FIXY **
+** bug FIXY
+- poprawić na mobilu wyswietlanie taskow zeby było
+tak jak na desktopie ( jak? )
+
+DODATKI

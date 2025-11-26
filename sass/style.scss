@@ -75,6 +75,7 @@ textarea {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 100%;
 }
 
 .task-priority {
@@ -88,14 +89,14 @@ textarea {
     }
 }
 
-.medium {
-    background-color: #F3D5AD;
-    border: 1px solid #E5BB83;
-}
-
 .low {
     background-color: #CCF1E2;
     border: 1px solid #A3D6C4;
+}
+
+.medium {
+    background-color: #F3D5AD;
+    border: 1px solid #E5BB83;
 }
 
 .high {
@@ -103,6 +104,20 @@ textarea {
     border: 1px solid #E9B5AA;
 }
 
+body.dark-mode .low {
+    background-color: #3d6652;
+    border: 1px solid #5fa284; 
+}
+
+body.dark-mode .medium {
+    background-color: #8c6239;
+    border: 1px solid #b07d43; 
+}
+
+body.dark-mode .high {
+    background-color: #7a3b35;
+    border: 1px solid #a85c55; 
+}
 
 .sidebar {
     position: sticky;
@@ -199,6 +214,38 @@ textarea {
     }
 }
 
+.profile-sm {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    padding: 1em;
+    border-radius: 10px;
+    // background-color: blue;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+    
+    .img-container {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    p {
+        font-size: 1.8rem;
+        margin-left: 10px;
+        font-weight: 500;
+    }
+}
 
 .new-tasks-section, .in-progress-tasks-section, .done-tasks-section {
     display: none;
@@ -258,7 +305,6 @@ textarea {
             max-width: 600px;
             display: flex;
             flex-direction: column;
-            margin-bottom: 3em;
 
             input {
                 width: 100%;
@@ -299,6 +345,8 @@ textarea {
             justify-content: flex-start;
             align-items: center;
             flex-direction: column;
+            padding-bottom: 3em;
+            height: 60%;
         
             .new-task {
                 display: grid;
@@ -507,6 +555,8 @@ textarea {
             .pfp {
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
         }
 
@@ -867,9 +917,18 @@ textarea {
         min-height: 100dvh;
         display: flex;
         flex-direction: column;
+
         .add-task-btn {
             bottom: 2em;
         }
+
+        .home-section {
+            margin-top: 5em;
+        }
+    }
+
+    .section {
+        margin-top: 4em;
     }
 }
 
@@ -989,3 +1048,9 @@ textarea {
     color: white;
 }
 
+@media (min-width: 1600px) {
+    .profile-sm {
+        top: 20px;
+        right: 50px;
+    }
+}

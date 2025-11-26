@@ -153,6 +153,7 @@ main {
 }
 .popup button {
   background-color: white;
+  color: black;
 }
 .popup button a {
   color: black;

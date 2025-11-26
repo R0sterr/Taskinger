@@ -195,6 +195,15 @@ const clearPopup = (arr, priority, err) => {
     err.style.visibility = 'hidden'
 }
 
+// SMALL PROFILE
+
+const profileSm = document.querySelector('.profile-sm')
+const profileSmAvatar = profileSm.querySelector('img')
+const profileSmUsername = profileSm.querySelector('p')
+
+profileSmAvatar.setAttribute('src', currentUser.avatarUrl)
+profileSmUsername.textContent = currentUser.username
+
 // ADD TASK FUNCTION
 
 addTaskBtn.addEventListener('click', () => handleAnimations(addTaskPopup))
@@ -504,6 +513,7 @@ const uploadBackground = () => {
         backgroundProfilePicture.style.backgroundImage = `url('${backgroundInput.value}')`
         currentUser.backgroundUrl = backgroundInput.value
         localStorage.setItem("users", JSON.stringify(users))
+        location.reload(true);
         msgClear()
         closeEditPopup(editProfilePopup)
     } else {
@@ -517,6 +527,7 @@ const uploadAvatar = () => {
         profilePicture.setAttribute('src', avatarInput.value)
         currentUser.avatarUrl = avatarInput.value
         localStorage.setItem("users", JSON.stringify(users))
+        location.reload(true);
         msgClear()
         closeEditPopup(editProfilePopup)
     } else {
@@ -774,6 +785,8 @@ const handleDeleteAcc = () => {
 deleteAccConfirm.addEventListener('click', handleDeleteAcc)
 
 // DARK MODE
+
+
 
 toggle.addEventListener('change', () => {
     if(toggle.checked) {
